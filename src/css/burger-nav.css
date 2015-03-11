@@ -1,0 +1,98 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.burgernav-original {
+  display: none; }
+  .burgernav-disabled .burgernav-original {
+    display: inherit; }
+
+.burgernav-drawer {
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  bottom: 0;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+  z-index: 999995;
+  background: #000;
+  -webkit-transition: left 500ms;
+  -moz-transition: left 500ms;
+  transition: left 500ms; }
+  .burgernav-drawer ul {
+    width: 100%; }
+    .burgernav-drawer ul li {
+      width: 100%;
+      display: table;
+      margin: 0.3125em 0; }
+      .burgernav-drawer ul li a {
+        background: #444;
+        padding: 0.3125em;
+        display: table-cell;
+        height: 44px;
+        line-height: 1.125em;
+        vertical-align: middle; }
+  .burgernav-disabled .burgernav-drawer {
+    display: none; }
+
+.toggle-burgernav {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  background: green;
+  color: #fff;
+  z-index: 999991;
+  cursor: pointer; }
+  .toggle-burgernav:after {
+    content: "..."; }
+  .burgernav-disabled .toggle-burgernav {
+    display: none; }
+
+.burgernav-mask {
+  opacity: 0;
+  overflow: hidden;
+  background: #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  z-index: 500;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  transition: opacity 500ms; }
+  .burgernav-mask:after {
+    content: " "; }
+  body.animating-burgernav .burgernav-mask {
+    width: 100%;
+    height: 100%; }
+  body.open-burgernav .burgernav-mask {
+    opacity: 0.5;
+    width: 100%;
+    height: 100%; }
+  .burgernav-disabled .burgernav-mask {
+    display: none; }
+
+.toggle-burgernav,
+body.with-burgernav {
+  -webkit-transition: margin 500ms;
+  -moz-transition: margin 500ms;
+  transition: margin 500ms; }
+
+body.animating-burgernav,
+body.open-burgernav {
+  overflow: hidden; }
+
+body.burgernav-disabled {
+  left: 0 !important;
+  margin-left: 0 !important; }
