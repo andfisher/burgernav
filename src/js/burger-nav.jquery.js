@@ -2,7 +2,7 @@
  * @desc Burger Nav for jQuery. A flexible responsive navigation for mobile touch devices.
  * @author Andrew Fisher
  * @copyright Copyright (c) 2015 Andrew Fisher (andfisher)
- * @version 0.0.1
+ * @version 0.0.2
  * @license The MIT License (MIT)
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -43,7 +43,7 @@
 		$.extend(true, _defaults, opts);
 		
 		var _methods = {
-			_debounce(fn, wait, immediate) {
+			_debounce: function(fn, wait, immediate) {
 				var _timeout;
 				return function() {
 					var context = this, args = arguments,
